@@ -1,0 +1,13 @@
+Slave address:    4
+Data buffer size: 100
+Starting address: 200201
+No of addresses:  7
+Function:         readHoldingRegisters
+SIM sel number:   1
+SIM username:     web
+SIM password:     web
+WiFi SSID:        AllBase
+WiFi password:    05072008
+RS232 1/2
+RS485 1/2
+CAN 1/2
