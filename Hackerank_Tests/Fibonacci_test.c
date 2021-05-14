@@ -18,7 +18,13 @@ unsigned long fibonacci(unsigned long n) {
 }
 int main()
 {
-    unsigned long var = 6ul, fib;
+    unsigned long var = 8ul, fib;
     fib = fibonacci(var);
     printf("Fibonacci of %lu is: %lu\n", var, fib);
+    
+    printf("Fibonacci sequence of %d is: ", var);
+    for (int i = 0; i < MAX_NUMBER; ++i){
+        printf("%ld ", f[i]);
+    }
+    printf("\n");
 }

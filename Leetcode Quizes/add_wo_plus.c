@@ -13,7 +13,7 @@ long binary_conv(int dec_num)
         rem = dec_num % 2;
         dec_num = dec_num / 2;
         bin_num += rem * temp;
-        temp *= 10;
+        temp*= 10;
     }
     return bin_num;
 }
