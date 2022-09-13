@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/a.out.dir/palindrome_num.cpp.o -o a.out 
