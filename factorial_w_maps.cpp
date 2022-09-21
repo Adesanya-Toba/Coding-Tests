@@ -41,6 +41,14 @@ public:
         factMap[x] = {fact};
         return fact;
     }
+
+    int fact_recursive(int n)
+    {
+        if (n <= 1) return 1;
+        int fact = 0;
+        fact = n * fact_recursive(n -1);
+        return fact;
+    }
 };
 
 int main()
@@ -51,6 +59,8 @@ int main()
     std::cout << myFact.factorial(10) << "\n";
     std::cout << myFact.factorial(6) << "\n";
     std::cout << myFact.factorial(10) << "\n";
+
+    std::cout << "Recursive factorial: " << myFact.fact_recursive(5) << std::endl;
 
     return 0;
 }
