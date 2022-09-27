@@ -1,3 +1,13 @@
+/**
+ * @file max_value.cpp
+ * @author Toba Adesanya (adesanyatoba@gmail.com)
+ * @brief Get the max value in a vector.
+ * @version 0.1
+ * @date 2022-09-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <iostream>
 #include <vector>
 #include <limits>
