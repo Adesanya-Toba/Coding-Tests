@@ -81,23 +81,21 @@ public:
         * if it does, just return i and the value's key.
         * 
         */
-
-        vector<int> result(2);
-
         for (int i = 0; i < nums.size(); i++)
         {
-            for (int j = 1; (i+j) < nums.size(); j++)
+            for(int j = i+1; j < nums.size(); j++)
             {
-                if (nums[i] == target - nums[i + j]) // NOTE: It is waay faster to subtract than to add!
+                if (nums[i] + nums[j] == target)
                 {
-                    result[0] = i;
-                    result[1] = i+j;
+                    vector<int> result;
+                    result.push_back(i);
+                    result.push_back(j);
                     cout << "[" << result[0] << "," << result[1] << "]" << endl;
                     return result;
                 }
             }
         }
-        return result;
+        return vector<int>();
     }
 };
 
@@ -105,26 +103,10 @@ public:
 int main()
 {
     Solution test1;
-    vector<int> nums {3,3};
+    vector<int> nums = {3,3};
     int target = 6;
 
     test1.twoSum(nums, target);
 
-    // int arr1[3] = {2,7,11};
-    // int target = 9;
-    
-    // int i,j;
-    
-    // for (i; i < 3; i++)
-    // {
-    //     for(j; j < 3; j++)
-    //     {
-    //         if ((arr1[i] + arr1[j]) == target)
-    //         {
-    //             cout << "[" << i << "," << j << "]" << endl;
-    //             return 0;
-    //         }
-    //     }
-    // }
     return 0;
 }
