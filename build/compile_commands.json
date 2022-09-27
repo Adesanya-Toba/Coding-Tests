@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/toba/Programming/Coding-Tests/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/a.out.dir/palindrome_num.cpp.o -c /home/toba/Programming/Coding-Tests/Leetcode_Quizes/palindrome_num.cpp",
-  "file": "/home/toba/Programming/Coding-Tests/Leetcode_Quizes/palindrome_num.cpp"
-}
-]

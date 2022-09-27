@@ -1,3 +1,0 @@
-/home/toba/Programming/Coding-Tests/build/CMakeFiles/a.out.dir
-/home/toba/Programming/Coding-Tests/build/CMakeFiles/edit_cache.dir
-/home/toba/Programming/Coding-Tests/build/CMakeFiles/rebuild_cache.dir
