@@ -10,7 +10,8 @@
  */
 #include <iostream>
 #include <map>
-#include <utility>
+#include <chrono>
+#include <bits/stdc++.h>
 
 std::map<int, int> fib_seq;
 
@@ -53,9 +54,45 @@ int fib_slow(int n)
 int main()
 {
     int n = 5;
-    std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
+    
+    // Start the timer
+    auto start = std::chrono::high_resolution_clock::now();
 
+    // Unsync the I/O of C and C++
+    std::ios_base::sync_with_stdio(false);
+
+    // Call the function
+    std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
+    n = 46;
+    std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
+    n = 102;
+    std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
+    auto end = std::chrono::high_resolution_clock::now();
+
+    double time_taken = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+    time_taken *= 1e-9;
+
+    std::cout << "Time taken: " << std::fixed << time_taken << std::setprecision(9) << "s\n\n";
+
+    /********************************************************************************/
+
+    auto start2 = std::chrono::high_resolution_clock::now();
+    // Unsync the I/O of C and C++
+    std::ios_base::sync_with_stdio(false);
+
+    // Call the function
+    n = 5;
     std::cout << "Fib slow of " << n << ": " << fib_slow(n) << std::endl;
+    n = 46;
+    std::cout << "Fib slow of " << n << ": " << fib_slow(n) << std::endl;
+    n = 102;
+    std::cout << "Fib slow of " << n << ": " << fib_slow(n) << std::endl;
+    auto end2 = std::chrono::high_resolution_clock::now();
+
+    double time_taken2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end2 - start2).count();
+    time_taken2 *= 1e-9;
+
+    std::cout << "Time taken: " << std::fixed << time_taken2 << std::setprecision(9) << "s\n\n";
 
     return 0;
 }
