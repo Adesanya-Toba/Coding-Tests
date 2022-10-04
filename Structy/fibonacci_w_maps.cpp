@@ -25,8 +25,11 @@ std::map<int, int> fib_seq;
 int fib(int n)
 {
     // Insert the known fib numbers
-    fib_seq.insert(std::pair<int, int>(0, 0));
-    fib_seq.insert(std::pair<int, int>(1, 1));
+    // fib_seq.insert(std::pair<int, int>(0, 0));
+    // fib_seq.insert(std::pair<int, int>(1, 1));
+
+    // Rather, just have return on the known fib elememts
+    if (n < 2) return n;
 
     std::map<int, int>::iterator p = fib_seq.find(n);
     if (p != fib_seq.end())
@@ -40,7 +43,7 @@ int fib(int n)
 }
 
 /**
- * @brief Fib normal or slow, with time comp: O(n^2) and space: O(1)
+ * @brief Fib normal or slow, with time comp: O(n^2) and space: O(n)
  * 
  * @param n 
  * @return int 
