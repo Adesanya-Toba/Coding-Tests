@@ -12,6 +12,7 @@
 #include <map>
 #include <chrono>
 #include <bits/stdc++.h>
+#include <sys/time.h>
 
 std::map<int, int> fib_seq;
 
@@ -55,8 +56,9 @@ int main()
 {
     int n = 5;
     
+    struct timeval start, end;
     // Start the timer
-    auto start = std::chrono::high_resolution_clock::now();
+    gettimeofday(&start, NULL);
 
     // Unsync the I/O of C and C++
     std::ios_base::sync_with_stdio(false);
@@ -67,16 +69,22 @@ int main()
     std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
     n = 102;
     std::cout << "Fib fast of " << n << ": " << fib(n) << std::endl;
-    auto end = std::chrono::high_resolution_clock::now();
+    // Stop the timer
+    gettimeofday(&end, NULL);
 
-    double time_taken = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
-    time_taken *= 1e-9;
+    double time_taken;
+
+    time_taken = (end.tv_sec - start.tv_sec) * 1e6;
+    time_taken = (time_taken + (end.tv_usec - start.tv_usec)) * 1e-6;
 
     std::cout << "Time taken: " << std::fixed << time_taken << std::setprecision(9) << "s\n\n";
 
     /********************************************************************************/
 
-    auto start2 = std::chrono::high_resolution_clock::now();
+    struct timeval start2, end2;
+    // Start the timer
+    gettimeofday(&start2, NULL);
+
     // Unsync the I/O of C and C++
     std::ios_base::sync_with_stdio(false);
 
@@ -87,12 +95,15 @@ int main()
     std::cout << "Fib slow of " << n << ": " << fib_slow(n) << std::endl;
     n = 102;
     std::cout << "Fib slow of " << n << ": " << fib_slow(n) << std::endl;
-    auto end2 = std::chrono::high_resolution_clock::now();
+    // Stop the timer
+    gettimeofday(&end2, NULL);
 
-    double time_taken2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end2 - start2).count();
-    time_taken2 *= 1e-9;
+    double time_taken2;
+
+    time_taken2 = (end2.tv_sec - start2.tv_sec) * 1e6;
+    time_taken2 = (time_taken2 + (end2.tv_usec - start2.tv_usec)) * 1e-6;
 
     std::cout << "Time taken: " << std::fixed << time_taken2 << std::setprecision(9) << "s\n\n";
-
+    
     return 0;
 }
