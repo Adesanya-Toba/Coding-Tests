@@ -18,6 +18,40 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <unordered_map>
+
+/******** Stucty's  solution ************/
+// Time: O(a*n), Space: O(a)
+// a = amount, n = length of numbers
+
+bool sumPossible(int amount, std::vector<int> numbers, std::unordered_map<int, int> &memo) {
+  if (memo.count(amount) > 0) {
+    return memo[amount];
+  }
+  
+  if (amount == 0) {
+    return true;
+  }
+  if (amount < 0) {
+    return false;
+  }
+  
+  for (int num : numbers) {
+    if (sumPossible(amount - num, numbers, memo)) {
+      memo[amount] = true;
+      return true;
+    }
+  }
+  
+  memo[amount] = false;
+  return false;
+}
+
+bool sumPossible(int amount, std::vector<int> numbers) {
+  std::unordered_map<int, int> memo;
+  return sumPossible(amount, numbers, memo);
+}
+
 
 /******** My solution ****************/
 // Time: O(n), Space: O(n)
