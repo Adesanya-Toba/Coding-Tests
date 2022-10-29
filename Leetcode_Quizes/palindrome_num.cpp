@@ -24,7 +24,7 @@ public:
      * 
      *        However, to avoid going over int.MAX (if we were given a number that is not a palindrome), we could
      *        instead of reversing the entire int, we just reverse half cos if it's a palindrome, the first half would
-     *        be equal to the reversed half. E.g. 1221, reversing the both half would give 12, which is equal to the top
+     *        be equal to the reversed half. E.g. 1221, reversing the bottom half would give 12, which is equal to the top
      *        half.
      * 
      *        We know how to reverse an int by doing 1221 % 10 = 1, then 1221/10 = 122. From here, we can get the next digit

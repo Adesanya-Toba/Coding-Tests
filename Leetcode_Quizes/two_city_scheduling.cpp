@@ -70,12 +70,27 @@ public:
     }
 };
 
+std::ostream& operator<<(ostream &out, vector<int> v)
+{
+    for(auto& j: v)
+        out << j << " ";
+    return out;
+}
+
 int main()
 {
     Solution test1;
     vector<vector<int>> v = {{10,20},{30,200},{400,50},{30,20}};
 
-    cout << "Affordable sum is: " << test1.twoCitySchedCost(v) << endl;
+    vector<int> m = { 3, 7};
+    v.push_back(m);
+    
+    for(auto & k: v)
+    {
+        cout << k << " ";
+    }
+
+    // cout << "Affordable sum is: " << test1.twoCitySchedCost(v) << endl;
 
     return 1;
 }
