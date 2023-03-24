@@ -29,6 +29,16 @@ public:
 };
 
 /**
+ * @brief Time complexity: O(n), it depends only the number of nodes in the tree
+ *        Space complexity: O(n), also depends only on the number of nodes
+ * 
+ *        For Both solutions.
+ * 
+ */
+
+
+
+/**
  * @brief Using Breadth first
  * 
  * @param root 
@@ -108,7 +118,7 @@ int main()
     b.right = &e;
     c.right = &f;
 
-    int result = treeSumDepthFirst(&a);
+    int result = treeSumDepthFirstLessCode(&a);
     std::cout << "Sum of the binary tree using depth first: " << result << std::endl;
 
     result = treeSumBreadthFirst(&a);
