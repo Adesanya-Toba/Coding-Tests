@@ -1,3 +1,17 @@
+/**
+ * @file binary_tree_depth_first.cpp
+ * @author Toba Adesanya (adesanyatoba@gmail.com)
+ * @brief Implementing a Binary tree using depth first approach. This can be
+ *        done by using a stack data structure or using the implicit recursive call stack.
+ * 
+ *        Write a function, depthFirstValues, that takes in a pointer to the root of a binary tree
+ *        The function should return a vector containing all values of the tree in depth-first order.
+ * @version 0.1
+ * @date 2023-03-24
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <string>
 #include <vector>
 #include <iostream>
@@ -30,6 +44,13 @@ void depthFirstValues(Node* root, std::vector<std::string> &values)
 
 }
 
+/**
+ * @brief Time complexity: O(n), it depends only the number of nodes in the tree
+ *        Space complexity: O(n), also depends only on the number of nodes
+ * 
+ * @param root 
+ * @return std::vector<std::string> 
+ */
 std::vector<std::string> depthFirstValues(Node* root) {
   // This would work with recursion
 
@@ -94,4 +115,6 @@ int main() {
   for (const auto v: my_array){
     std::cout << v << std::endl;
   }
+
+  return 0;
 }
