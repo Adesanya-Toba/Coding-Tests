@@ -72,9 +72,10 @@ bool treeIncludesBreadthFirst(Node *root, std::string targetVal)
     // Algo runs on while queue is not empty
     while (my_queue.size() > 0)
     {
-        Node* current = my_queue.front();
+        Node* current = my_queue.front(); // Get element at the top of the queue
         my_queue.pop();
         if (current->val == targetVal){
+            // Evaluate and return if that's our target value
             return true;
         }
 
