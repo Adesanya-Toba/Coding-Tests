@@ -31,6 +31,13 @@ public:
     }
 };
 
+/**
+ * @brief Time complexity: O(n), it depends only the number of nodes in the tree
+ *        Space complexity: O(n), also depends only on the number of nodes
+ * 
+ *        For Both solutions.
+ * 
+ */
 void treeMinValue(Node *root, int& min_value)
 {
     if(root == nullptr) return;
