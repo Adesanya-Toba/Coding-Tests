@@ -1,3 +1,8 @@
+"""
+Time: O(n)
+Space: O(1)
+"""
+
 import math
 
 
