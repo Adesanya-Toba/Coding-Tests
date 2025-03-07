@@ -33,5 +33,5 @@ def is_prime_OsqrtN(n):
     return True
 
 
-print(is_prime_OsqrtN(4))
-print(int(3.1))
+print(is_prime_OsqrtN(2))
+print(int(3.9))
