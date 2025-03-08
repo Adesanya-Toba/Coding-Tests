@@ -1,6 +1,6 @@
 """
-Time:
-Space:
+Time:O(n)
+Space: O(n)
 
 Write a function, most_frequent_char, that takes in
 a string as an argument. The function should return
