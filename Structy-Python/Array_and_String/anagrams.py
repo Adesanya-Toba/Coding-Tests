@@ -24,9 +24,9 @@ def anagrams(s1, s2):
 
     for letter in s1:
         if letter not in str_dict1:
-            str_dict1[letter] = 1
-        else:
-            str_dict1[letter] += 1
+            str_dict1[letter] = 0
+
+        str_dict1[letter] += 1
 
     for letter in s2:
         if letter not in str_dict2:
@@ -44,3 +44,21 @@ def anagrams(s1, s2):
 
 
 print(anagrams("hello", "elloh"))
+
+
+def anagrams_alternate(s1, s2):
+    return char_count(s1) == char_count(s2)
+
+
+def char_count(s):
+    count = {}
+
+    for char in s:
+        if char not in count:
+            count[char] = 0
+        count[char] += 1
+
+    return count
+
+
+print(anagrams_alternate("hello", "elloh"))
