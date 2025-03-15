@@ -1,6 +1,6 @@
 """15/03/2025
-Time:
-Space:
+Time: O(n)
+Space: O(n)
 
 Write a function, longest_word, that takes in a sentence
 string as an argument. The function should return the longest
