@@ -7,7 +7,7 @@ You may assume that each input list does not contain duplicate elements."""
 from typing import List
 
 
-def exclusive_items(a: List, b: List):
+def exclusive_items_mine(a: List, b: List):
     # Similar to intersection
     set_b = set(b)
     result = []
@@ -27,7 +27,7 @@ def exclusive_items(a: List, b: List):
 # Time: O(n), O(n+m); where n and m are lengths of a and b resp.
 
 
-def exclusive_items_optimized(a: List, b: List):
+def exclusive_items_alvin(a: List, b: List):
     # convert both to sets and compare during iteration
     set_a = set(a)
     set_b = set(b)
@@ -49,5 +49,5 @@ def exclusive_items_optimized(a: List, b: List):
 
 
 if __name__ == "__main__":
-    print(exclusive_items([4, 2, 1, 6], [3, 6, 9, 2, 10]))
-    print(exclusive_items_optimized([4, 2, 1, 6], [3, 6, 9, 2, 10]))
+    print(exclusive_items_mine([4, 2, 1, 6], [3, 6, 9, 2, 10]))
+    print(exclusive_items_alvin([4, 2, 1, 6], [3, 6, 9, 2, 10]))
