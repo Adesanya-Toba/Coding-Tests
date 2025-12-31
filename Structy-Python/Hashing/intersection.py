@@ -8,7 +8,7 @@ You may assume that each input list does not contain duplicate elements."""
 def intersection(a: list, b: list):
     result: list = []
     # Convert one of the lists into set to benefit from O(1) lookup
-    set_a = set(a)
+    set_a = set(a)  # Takes O(n) time
 
     # Iterate through the second and check
     for i in b:
