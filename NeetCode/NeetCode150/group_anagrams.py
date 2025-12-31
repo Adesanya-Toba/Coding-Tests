@@ -19,6 +19,8 @@ class Solution:
 
         return list(res.values())  # return just the values of the dict
 
+    # Time: O(m * n), Space: O(m); m is the number of strings and n is the longest string
+
 
 if __name__ == "__main__":
     strs = ["act", "pots", "tops", "cat", "stop", "hat"]
