@@ -21,14 +21,16 @@ class Solution:
         # Read sting to identify word lengths and special characters
         result = []
         word = ""
-        count: int = 0
+        idx: int = 0
 
-        for idx, char in enumerate(s):
-            if char.isnumeric():
-                count = int(char)
-            if char == "#":
-                word = s[idx + 1 : count + idx + 1]
-                result.append(word)
+        while idx < len(s):
+            j = idx  # Second pointer to find the length of the word
+            while s[j] != "#":
+                j += 1  # Increment until the # symbol
+            length = int(s[idx:j])
+            word = s[j + 1 : j + 1 + length]
+            result.append(word)
+            idx = j + 1 + length  # remember to increment the index
 
         print(result)
         return result
@@ -37,6 +39,8 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
     new_word = sol.encode(["hello", "world"])
+    sol.decode(new_word)
+    new_word = sol.encode(["!@#$%^&*()"])
     sol.decode(new_word)
     # s = "5#hello5#world"
     # print(s[2::])
