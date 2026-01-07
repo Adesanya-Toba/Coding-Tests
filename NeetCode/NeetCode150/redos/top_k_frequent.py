@@ -40,6 +40,10 @@ class Solution:
                 result.append(num)
                 if len(result) == k:
                     return result
+        # Time: O(n), Space: O(n)
+        # I still think there might be a better way to do this.
+
+        
     
     
 if __name__ == "__main__":
