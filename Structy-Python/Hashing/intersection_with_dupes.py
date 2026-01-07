@@ -13,15 +13,9 @@ def intersection_with_dupes(a, b):
 
     result = []
 
-    # for i in hash_a:
-    #     if i in b:
-    #         min_val = min(hash_a[i], hash_b[i])
-
-    #         result.append(i * min_val)
-
     for key in hash_a:
         if key in hash_b:
-            for i in range(min(hash_a[key], hash_b[key])):
+            for i in range(0, min(hash_a[key], hash_b[key])):
                 result.append(key)
 
     return result
@@ -37,6 +31,29 @@ def convert_to_hash_map(lst: list):
     return hash_map
 
 
+# Alternate solution with Counter
+from collections import Counter
+
+
+def alt_intersection_with_dupes(a, b):
+    count_a = Counter(a)
+    count_b = Counter(b)
+
+    print(count_a)
+    print(
+        count_b["a"]
+    )  # Counter doesn't raise a KeyError if the key doesn't exist. Nice!
+    result = []
+
+    for ele in count_a:
+        for i in range(0, min(count_a[ele], count_b[ele])):
+            result.append(ele)
+    return result
+
+
 print(
     intersection_with_dupes(["a", "b", "c", "b"], ["x", "y", "b", "b"])
+)  # -> ["b", "b"]
+print(
+    alt_intersection_with_dupes(["a", "b", "c", "b"], ["x", "y", "b", "b"])
 )  # -> ["b", "b"]
