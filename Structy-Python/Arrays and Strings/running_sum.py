@@ -13,7 +13,7 @@ def running_sum(numbers: list):
         sum += i
         result.append(sum)
 
-    print(result)
+    # print(result)
     return result
 
 
