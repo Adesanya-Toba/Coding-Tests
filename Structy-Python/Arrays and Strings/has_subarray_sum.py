@@ -7,19 +7,30 @@ A subarray is a consecutive series of one or more elements of the list.
 """
 
 
-def has_subarray_sum(numbers, target_sum):
-    sum = 0
+def has_subarray_sum(numbers: list, target_sum):
 
-    for i in numbers:
-        sum += i
-        if sum == target_sum:
+    # Create a prefix sum to start
+    prefix_sum = [0]
+    sum = 0
+    seen: set = set()
+
+    for num in numbers:
+        sum += num
+        prefix_sum.append(sum)
+    # print(prefix_sum)
+
+    for num in prefix_sum:
+        if (num - target_sum) not in seen:
+            seen.add(num)
+        else:
+            # print(seen)
             return True
-        elif sum > target_sum:
-            return False
+    # print(seen)
+    return False
 
 
 if __name__ == "__main__":
-    has_subarray_sum([1, 3, 1, 4, 3], 8)  # -> True
+    print(has_subarray_sum([1, 3, 1, 4, 3], 8))  # -> True
     has_subarray_sum([1, 3, 1, 1, 3], 2)  # -> True
     has_subarray_sum([1, 3, 1, 4, 3], 2)  # -> False
     has_subarray_sum([1, 1, 1, 1, 1, 1, 1, 1, 1], 10)  # -> False
