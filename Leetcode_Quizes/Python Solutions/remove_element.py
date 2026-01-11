@@ -33,6 +33,15 @@ class Solution:
         print(j + 1)
         return j + 1
 
+    def altRemoveElement( self, nums:List, val:int) -> int:
+        k = 0
+
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+        return k
+
 
 
 if __name__ == "__main__":
@@ -40,8 +49,10 @@ if __name__ == "__main__":
     sol.removeElement([3,2,2,3], 3) # 2
     sol.removeElement([0,1,2,2,3,0,4,2], 2) # Output: 5, nums = [0,1,4,0,3,_,_,_]
     sol.removeElement([2], 3) # [2]
-    #                  i             j
-    #                  0 1 2 3 4 5 6 7
+    #                  i = 0 k = 0
+    #                [0, 1, 2, 2, 3, 0, 4, 2]
+    #                                k     i           
+    #                [0, 1, 3, 0, 4,] 
     #                 [0,1,4,0,3,2,2,2]
 
     # i = 0, j = 7  
