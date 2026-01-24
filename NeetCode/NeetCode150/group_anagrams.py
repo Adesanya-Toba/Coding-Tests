@@ -16,6 +16,7 @@ class Solution:
                 count[ord(c) - ord("a")] += 1
             # The res dict is of the form: {(tuple): [list]}
             res[tuple(count)].append(s)  # Casting to tuple as list is not hashable
+            print(res)
 
         return list(res.values())  # return just the values of the dict
 
