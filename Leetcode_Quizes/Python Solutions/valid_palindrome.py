@@ -35,4 +35,7 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.isPalindrome(s="A man, a plan, a canal: Panama"))  # true
+    # print(sol.isPalindrome(s="A man, a plan, a canal: Panama"))  # true
+
+    s = "Hello world"
+    print(s[1:-1])
