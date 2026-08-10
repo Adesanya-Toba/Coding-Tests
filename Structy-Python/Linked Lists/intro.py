@@ -19,4 +19,13 @@ def print_list(head):
         print(current.val)
         current = current.next
 
-print_list(a)
+
+def print_list_recursion(head):
+    if head is None:
+        return
+    print(head.val)
+    print_list_recursion(head.next)
+
+
+# print_list(a)
+print_list_recursion(a)
