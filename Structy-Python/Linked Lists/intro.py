@@ -1,26 +1,27 @@
 class Node:
     def __init__(self, val):
         self.val = val
-        self.next:Node|None = None
+        self.next: Node | None = None
 
 
-a = Node('A')
-b = Node('B')
-c = Node('C')
-d = Node('D')
+a = Node("A")
+b = Node("B")
+c = Node("C")
+d = Node("D")
 
 a.next = b
 b.next = c
 c.next = d
 
-def print_list(head:Node):
+
+def print_list(head: Node):
     current = head
     while current is not None:
         print(current.val)
         current = current.next
 
 
-def print_list_recursion(head:Node | None):
+def print_list_recursion(head: Node | None):
     if head is None:
         return
     print(head.val)
