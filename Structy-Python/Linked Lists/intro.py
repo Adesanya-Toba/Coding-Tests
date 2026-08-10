@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, val):
         self.val = val
-        self.next = None
+        self.next:Node|None = None
 
 
 a = Node('A')
@@ -13,14 +13,14 @@ a.next = b
 b.next = c
 c.next = d
 
-def print_list(head):
+def print_list(head:Node):
     current = head
     while current is not None:
         print(current.val)
         current = current.next
 
 
-def print_list_recursion(head):
+def print_list_recursion(head:Node | None):
     if head is None:
         return
     print(head.val)
